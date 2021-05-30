@@ -1,0 +1,47 @@
+--- calc1-orig.py	2021-05-30 09:17:41.162501151 +0300
++++ calc1-py2.py	2021-05-30 09:19:57.885559070 +0300
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python2
+ 
+ #
+ # Calculator widget.
+@@ -49,7 +49,7 @@ class Calculator(Frame):
+     def decimal(self):
+         self.need_clr = False
+         cont = self.display.get()
+-	lastsp = cont.rfind(' ')
++        lastsp = cont.rfind(' ')
+         if lastsp == -1:
+             lastsp = 0
+         if cont.find('.',lastsp) == -1:
+@@ -58,7 +58,7 @@ class Calculator(Frame):
+     # Push a function button.
+     def oper(self, op):
+         self.display.set(self.display.get() + ' ' + op + ' ')
+-	self.need_clr = False
++        self.need_clr = False
+ 
+     # Calculate the expressoin and set the result.
+     def calc(self):
+@@ -78,7 +78,7 @@ class Calculator(Frame):
+ 
+         # The StringVar() object holds the value of the Entry.
+         self.display = StringVar()
+-	e = Entry(self, relief=SUNKEN, textvariable=self.display)
++        e = Entry(self, relief=SUNKEN, textvariable=self.display)
+         e.pack(side=TOP, expand=YES, fill=BOTH)
+ 
+         # This is a nice loop to produce the number buttons.  The Lambda
+@@ -90,9 +90,9 @@ class Calculator(Frame):
+                             lambda c=char: self.digit(c))
+ 
+         keyF = self.frame(TOP)
+-	self.button(keyF, LEFT, '-', self.sign)
++        self.button(keyF, LEFT, '-', self.sign)
+         self.button(keyF, LEFT, '0', lambda ch='0': self.digit(ch))
+-	self.button(keyF, LEFT, '.', self.decimal)
++        self.button(keyF, LEFT, '.', self.decimal)
+ 
+         # The frame is used to hold the operator buttons.
+         opsF = self.frame(TOP)

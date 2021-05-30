@@ -1,0 +1,28 @@
+--- calc1-py2.py	2021-05-30 09:19:57.885559070 +0300
++++ calc1-py3.py	2021-05-30 09:20:30.142572735 +0300
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python2
++#!/usr/bin/env python3
+ 
+ #
+ # Calculator widget.
+@@ -9,8 +9,8 @@
+ #
+ # Modified by T W Bennet
+ #
+-from Tkinter import *
+-from tkMessageBox import *
++from tkinter import *
++#from tkMessageBox import *
+ 
+ # Calculator is a class derived from Frame.  Frames, being someone generic,
+ # make a nice base class for whatever you what to create.
+@@ -63,7 +63,7 @@ class Calculator(Frame):
+     # Calculate the expressoin and set the result.
+     def calc(self):
+         try:
+-            self.display.set(`eval(self.display.get())`)
++            self.display.set(repr(eval(self.display.get())))
+             self.need_clr = True
+         except:
+             showerror('Operation Error', 'Illegal Operation')
