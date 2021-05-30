@@ -29,6 +29,7 @@ for line in input:
 	or '\t' + var in line \
 	or '(' + var in line \
 	or var + ')' in line \
-	or '=' + var in line) \
+	or '=' + var in line \
+	or var + '=' in line) \
 	and not line[0] == '#':
 		print(line)
